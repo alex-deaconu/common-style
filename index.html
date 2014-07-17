@@ -9,11 +9,52 @@
   </head>
 
   <body>
+    <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="http://c558385.r85.cf2.rackcdn.com/rise-logo.png"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#core">Core</a></li>
+            <li><a href="#UI-Components">UI-Components</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Container -->
     <div class="container">
       <div class="page-header">
-        <h1>Rise Vision Style Guide</h1>
+        <h1 class="page">Rise Vision Style Guide</h1>
       </div>
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p class="lead">Common CSS styling to be shared across all Rise Vision apps, widgets and components.</p>
+
+      <h2>Installation</h2>
+      <ol>
+        <li>Install node dependencies <code>$ npm install</code></li>
+        <li>Install front-end dependencies <code>$ bower install</code></li>
+      </ol>
+
+      <h2>Development</h2>
+      <p>All SASS files go under <code>/src</code>. To include them in the final CSS file add them as <code>imports</code> in the <code>app.scss</code> file.</p>
+
+      <p>The build process will pull in all the custom SASS files and the bootstrap SASS files and generate a single <code>rise.min.css</code> file. The hierarchy and overwrites are controlled within the <code>rise.min.css</code> file. The naming/directory structure has no impact on this.</p>
+
+      <p>Run <code>$ gulp</code> to see a list of available tasks and <code>$ gulp dev</code> to watch for and compile SASS.</p>
+
+      <h2>Build</h2>
+      <p>To build run <code>$gulp build</code>. This will generate a <code>dist</code> folder with <code>css</code> and <code>font</code> folders.</p>
+
     </div>
+    <!-- END Main Container -->
   </body>
 </html>
