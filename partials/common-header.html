@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="page-header">
+    <h1 class="page">Common Header</h1>
+  </div>
+
+  <p class="lead">A Common Header with Google Authentication, and Rise Registration process, that should be reused across all Rise Vision applications.</p>
+
+  <div class="row">
+  	<h3>User Not Authenticated</h3>
+  	<common-header
+  		auth-status="0"
+  		is-purchaser="false"
+  		user-profile-picture="'http://api.randomuser.me/portraits/med/men/33.jpg'"
+			user-profile-name="'Alfredo Sanchez'"
+			user-profile-email="'alfredo.sanchez90@example.com'"
+  	></common-header>
+  </div>
+
+  <div class="row">
+  	<h3>Authenticated</h3>
+  	<common-header
+  		auth-status="1"
+  		is-purchaser="true"
+  		user-profile-picture="'http://api.randomuser.me/portraits/med/men/33.jpg'"
+			user-profile-name="'Alfredo Sanchez'"
+			user-profile-email="'alfredo.sanchez90@example.com'"
+  	></common-header>
+  </div>
+</div>

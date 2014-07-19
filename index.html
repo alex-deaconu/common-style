@@ -1,60 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="styleGuideApp">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
     <title>Rise Vision Style Guide</title>
+
+    <link href="//s3.amazonaws.com/rise-common-test/styles/glyphicons/glyphicons.min.css" rel="stylesheet" type="text/css">
     <link href="css/app.css" rel="stylesheet">
+
     <link rel="icon" type="image/png" href="favicon.png">
   </head>
 
   <body>
-    <!-- Static navbar -->
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><img src="http://c558385.r85.cf2.rackcdn.com/rise-logo.png"></a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#core">Core</a></li>
-            <li><a href="#UI-Components">UI-Components</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
 
-    <!-- Main Container -->
-    <div class="container">
-      <div class="page-header">
-        <h1 class="page">Rise Vision Style Guide</h1>
-      </div>
-      <p class="lead">Common CSS styling to be shared across all Rise Vision apps, widgets and components.</p>
+    <navbar></navbar>
 
-      <h2>Installation</h2>
-      <ol>
-        <li>Install node dependencies <code>$ npm install</code></li>
-        <li>Install front-end dependencies <code>$ bower install</code></li>
-      </ol>
+    <div ng-view></div>
 
-      <h2>Development</h2>
-      <p>All SASS files go under <code>/src</code>. To include them in the final CSS file add them as <code>imports</code> in the <code>app.scss</code> file.</p>
-
-      <p>The build process will pull in all the custom SASS files and the bootstrap SASS files and generate a single <code>rise.min.css</code> file. The hierarchy and overwrites are controlled within the <code>rise.min.css</code> file. The naming/directory structure has no impact on this.</p>
-
-      <p>Run <code>$ gulp</code> to see a list of available tasks and <code>$ gulp dev</code> to watch for and compile SASS.</p>
-
-      <h2>Build</h2>
-      <p>To build run <code>$gulp build</code>. This will generate a <code>dist</code> folder with <code>css</code> and <code>font</code> folders.</p>
-
-    </div>
-    <!-- END Main Container -->
+    <!-- dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular-route.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular-sanitize.js"></script>
+    <!-- app js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/directives.js"></script>
   </body>
 </html>
