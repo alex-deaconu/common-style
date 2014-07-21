@@ -6,8 +6,11 @@ angular.module('styleGuideApp.directives', []);
 angular.module('styleGuideApp', [
   'ngRoute',
   'ngSanitize',
+  'hljs',
+  'ui.bootstrap',
   'styleGuideApp.controllers',
-  'styleGuideApp.directives'
+  'styleGuideApp.directives',
+  'commonHeader'
 ])
   .config(['$routeProvider',
     function($routeProvider) {

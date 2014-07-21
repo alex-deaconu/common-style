@@ -24,8 +24,8 @@
 				<li>
 					<a href="">Sellers</a>
 				</li>
-				<li class="dropdown" ng-class="{open: helpDropdown}">
-					<a href="" class="dropdown-toggle" data-toggle="dropdown" ng-click="helpDropdown=!helpDropdown">
+				<li class="dropdown">
+					<a href="" class="dropdown-toggle">
 						Help
 					</a>
 					<ul class="dropdown-menu">
@@ -44,9 +44,12 @@
 				</li>
 			</ul>
 		</div>
+
+		<!-- If User Authenticated -->
 		<ul class="nav navbar-nav navbar-right actions-nav" ng-show="authStatus == 1">
-			<li class="dropdown" ng-class="{open: notificationsDropdown}">
-				<a href="" class="dropdown-toggle" data-toggle="dropdown" ng-click="notificationsDropdown=!notificationsDropdown">
+			<!-- Notifications -->
+			<li class="dropdown">
+				<a href="" class="dropdown-toggle">
 					<i class="glyphicons bell"></i>
 					<span class="label label-danger">{{messages.length}}</span>
 				</a>
@@ -58,14 +61,16 @@
 					<li class="system-message" ng-repeat="message in messages" ng-bind-html="message"></li>
 				</ul>
 			</li>
+			<!-- Shopping Cart -->
 			<li class="shopping-cart" ng-init="updateCartIcon()" ng-show="isPurchaser">
 				<a href="">
 					<i class="glyphicons shopping_cart"></i>
 					<span id="cartBadge" class="label label-primary">7</span>
 				</a>
 			</li>
-			<li class="dropdown" ng-class="{open: appDropdown}">
-				<a href="" class="dropdown-toggle" data-toggle="dropdown" ng-click="appDropdown=!appDropdown">
+			<!-- Current App -->
+			<li class="dropdown">
+				<a href="" class="dropdown-toggle">
 					<i class="glyphicons show_thumbnails"></i>
 				</a>
 				<ul class="dropdown-menu company-menu">
@@ -120,6 +125,7 @@
 					</li>
 				</ul>
 			</li>
+			<!-- END Current App -->
 			<li class="dropdown" ng-show="companyLoaded">
 				<a href="" class="dropdown-toggle" data-toggle="dropdown">
 					<i class="glyphicons cogwheel"></i>
@@ -171,8 +177,8 @@
 					</li>
 				</ul>
 			</li>
-			<li class="dropdown" ng-class="{open: userDropdown}">
-				<a href="" class="dropdown-toggle" data-toggle="dropdown" ng-click="userDropdown=!userDropdown">
+			<li class="dropdown">
+				<a href="" class="dropdown-toggle">
 					<img ng-src="{{userProfilePicture}}" class="profile-pic" width="30" height="30" alt="User" />
 				</a>
 				<ul class="dropdown-menu">
@@ -206,7 +212,10 @@
 				</ul>
 			</li>
 		</ul>
+
+		<!-- If User NOT Authenticated -->
 		<ul class="nav navbar-nav navbar-right" ng-show="authStatus == 0">
+			<!-- Sign In Button -->
 			<li>
 				<a href="" class="sign-in" ng-click="login()">
 					<span>Sign In</span>
@@ -214,6 +223,7 @@
 				</a>
 			</li>
 		</ul>
+		<!-- Loading ... -->
 		<ul class="nav navbar-nav navbar-right" ng-show="authStatus == -1">
 			<li>Loading...</li>
 		</ul>
