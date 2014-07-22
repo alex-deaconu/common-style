@@ -6,70 +6,84 @@
   <p class="lead">A Common Header with Google Authentication, and Rise Registration process, that should be reused across all Rise Vision applications.</p>
 
   <div class="row">
-    <h3>Usage</h3>
-    <!-- Code Snippet -->
-    <script type="text/ng-template" id="user-Not-authenticated">
-    <common-header
-      auth-status="0"
-      is-purchaser="false"
-      company-loaded="true"
-      selected-company-name="'Rise Vision'"
-      can-change-company="true"
-      user-profile-picture="'http://api.randomuser.me/portraits/med/men/33.jpg'"
-      user-profile-name="'Alfredo Sanchez'"
-      user-profile-email="'alfredo.sanchez90@example.com'"
-    ></common-header>
-    </script>
-    <hljs include="'user-Not-authenticated'"></hljs>
-    <!-- END Code Snippet -->
+    <div class="col-md-6">
+      <h3>Usage</h3>
+      <!-- Code Snippet -->
+      <script type="text/ng-template" id="user-Not-authenticated">
+      <common-header
+        auth-status="0"
+        is-purchaser="false"
+        company-loaded="true"
+        can-change-company="true"
+        selected-company-name="'Rise Vision'"
+        user-profile-picture="'http://api.randomuser.me/portraits/med/men/33.jpg'"
+        user-profile-name="'Alfredo Sanchez'"
+        user-profile-email="'alfredo.sanchez90@example.com'"
+        messages="messages"
+      ></common-header>
+      </script>
+      <hljs include="'user-Not-authenticated'"></hljs>
+      <!-- END Code Snippet -->
+    </div>
+
+    <div class="col-md-6">
+      <h3>Example Settings</h3>
+      <!-- Auth Status -->
+      <div class="form-group">
+        <label for="auth-status">Auth Status</label>
+        <label class="radio-inline">
+          <input type="radio" name="inlineRadioOptions" value="-1" ng-model="authStatus"> -1
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="inlineRadioOptions" value="0" ng-model="authStatus"> 0
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="inlineRadioOptions" value="1" ng-model="authStatus"> 1
+        </label>
+      </div>
+      <!-- Is Purchaser -->
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" ng-model="isPurchaser"> Is Purchaser
+        </label>
+      </div>
+      <!-- Company Loaded -->
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" ng-model="companyLoaded"> Company Loaded
+        </label>
+      </div>
+      <!-- Can Change Company -->
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" ng-model="canChangeCompany"> Can Change Company
+        </label>
+      </div>
+      <!-- Selected Company Name -->
+      <div class="form-group">
+        <label for="selectedCompanyName">Selected Company Name</label>
+        <input type="text" class="form-control" ng-model="selectedCompanyName">
+      </div>
+      <!-- User Profile Name -->
+      <div class="form-group">
+        <label for="userProfileName">User Profile Name</label>
+        <input type="text" class="form-control" ng-model="userProfileName">
+      </div>
+    </div>
   </div>
 
-  <!-- Case Where user is not authenticated -->
   <div class="row examples">
-  	<h3>User Not Authenticated</h3>
+    <h3>Example</h3>
     <common-header
-  		auth-status="0"
-  		is-purchaser="false"
-  		user-profile-picture="'http://api.randomuser.me/portraits/med/men/33.jpg'"
-			user-profile-name="'Alfredo Sanchez'"
-			user-profile-email="'alfredo.sanchez90@example.com'"
-  	></common-header>
-  </div>
-
-  <!-- Case Where user is not authenticated -->
-  <div class="row examples">
-    <h3>User Not Authenticated and Loading...</h3>
-    <common-header
-      auth-status="-1"
-      is-purchaser="false"
-      user-profile-picture="'http://api.randomuser.me/portraits/med/men/33.jpg'"
-      user-profile-name="'Alfredo Sanchez'"
-      user-profile-email="'alfredo.sanchez90@example.com'"
-    ></common-header>
-  </div>
-
-  <div class="row examples">
-  	<h3>User Authenticated but Not a Purchaser</h3>
-  	<common-header
-  		auth-status="1"
-  		is-purchaser="false"
-  		user-profile-picture="'http://api.randomuser.me/portraits/med/men/33.jpg'"
-			user-profile-name="'Alfredo Sanchez'"
-			user-profile-email="'alfredo.sanchez90@example.com'"
-  	></common-header>
-  </div>
-
-  <div class="row examples">
-    <h3>User Authenticated, Company Loaded, Can Change Company and a Purchaser</h3>
-    <common-header
-      auth-status="1"
-      is-purchaser="true"
-      company-loaded="true"
-      selected-company-name="'Rise Vision'"
-      can-change-company="true"
-      user-profile-picture="'http://api.randomuser.me/portraits/med/men/33.jpg'"
-      user-profile-name="'Alfredo Sanchez'"
-      user-profile-email="'alfredo.sanchez90@example.com'"
+      auth-status="authStatus"
+      is-purchaser="isPurchaser"
+      company-loaded="companyLoaded"
+      can-change-company="canChangeCompany"
+      selected-company-name="selectedCompanyName"
+      user-profile-name="userProfileName"
+      user-profile-email="userProfileEmail"
+      user-profile-picture="userProfilePicture"
+      messages="messages"
     ></common-header>
   </div>
 </div>
