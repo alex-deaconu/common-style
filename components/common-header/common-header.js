@@ -3,9 +3,15 @@
 angular.module('commonHeader', [
   'ui.bootstrap'
 ])
-  .directive('commonHeader', [
-
-    function() {
+  .controller('AuthorizationModalCtrl', ['$scope', '$modalInstance',
+    function($scope, $modalInstance) {
+      $scope.cancel = function() {
+        $modalInstance.dismiss('cancel');
+      };
+    }
+  ])
+  .directive('commonHeader', ['$modal',
+    function($modal) {
       return {
         restrict: 'E',
         templateUrl: 'components/common-header/common-header.html',
@@ -22,6 +28,14 @@ angular.module('commonHeader', [
         },
         link: function(scope, iElement, iAttrs) {
           scope.navCollapsed = true;
+          // Modals
+          scope.login = function(size) {
+            var modalInstance = $modal.open({
+              templateUrl: 'authorization-modal.html',
+              controller: 'AuthorizationModalCtrl',
+              size: size
+            });
+          };
           // If nav options not provided use defaults
           if (!scope.navOptions)
             scope.navOptions = [{
