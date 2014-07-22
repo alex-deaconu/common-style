@@ -20,5 +20,23 @@ angular.module('styleGuideApp.controllers')
       $scope.userProfilePicture = 'http://api.randomuser.me/portraits/med/men/33.jpg';
       // Messages
       $scope.messages = ['<li class="system-message">Lorem ipsum dolor sit amet</li>', '<li class="system-message">Consectetur adipiscing elit</li>', '<li class="system-message">Suspendisse convallis leo sed</li>'];
+      // Navigation choices
+      $scope.navOptions = [{
+        title: 'Home',
+        link: '#/'
+      }, {
+        title: 'Store',
+        link: ''
+      }, {
+        title: 'Account',
+        link: ''
+      }, {
+        title: 'Sellers',
+        link: ''
+      }, {
+        title: 'Platform',
+        link: 'http://rva.risevision.com/',
+        target: '_blank'
+      }];
     }
   ]);

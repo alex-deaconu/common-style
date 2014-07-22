@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('commonHeader', [])
+angular.module('commonHeader', [
+  'ui.bootstrap'
+])
   .directive('commonHeader', [
 
     function() {
@@ -18,7 +20,28 @@ angular.module('commonHeader', [])
           userProfileEmail: '=',
           messages: '='
         },
-        link: function(scope, iElement, iAttrs) {}
+        link: function(scope, iElement, iAttrs) {
+          scope.navCollapsed = true;
+          // If nav options not provided use defaults
+          if (!scope.navOptions)
+            scope.navOptions = [{
+              title: 'Home',
+              link: '#/'
+            }, {
+              title: 'Store',
+              link: ''
+            }, {
+              title: 'Account',
+              link: ''
+            }, {
+              title: 'Sellers',
+              link: ''
+            }, {
+              title: 'Platform',
+              link: 'http://rva.risevision.com/',
+              target: '_blank'
+            }];
+        }
       };
     }
   ]);

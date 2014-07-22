@@ -7,7 +7,6 @@ angular.module('styleGuideApp', [
   'ngRoute',
   'ngSanitize',
   'hljs',
-  'ui.bootstrap',
   'styleGuideApp.controllers',
   'styleGuideApp.directives',
   'commonHeader'
