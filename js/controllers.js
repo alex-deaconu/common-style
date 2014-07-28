@@ -8,7 +8,7 @@ angular.module('styleGuideApp.controllers')
   ])
   .controller('CommonHeaderCtrl', ['$scope',
     function($scope) {
-      $scope.authStatus = 0;
+      $scope.authStatus = 1;
       $scope.isPurchaser = true;
       // Company
       $scope.companyLoaded = true;
