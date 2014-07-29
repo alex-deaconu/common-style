@@ -22,6 +22,9 @@ angular.module('styleGuideApp', [
           controller: 'CommonHeaderCtrl',
           templateUrl: 'partials/common-header.html'
         })
+        .when('/componentdemo', {
+          templateUrl: 'partials/component-demo.html'
+        })
         .otherwise({
           redirectTo: '/'
         });
