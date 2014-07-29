@@ -11,6 +11,12 @@ angular.module('styleGuideApp', [
   'styleGuideApp.directives',
   'commonHeader'
 ])
+  .config(function(hljsServiceProvider) {
+    hljsServiceProvider.setOptions({
+      // replace tab with 2 spaces
+      tabReplace: '  '
+    });
+  })
   .config(['$routeProvider',
     function($routeProvider) {
       $routeProvider
@@ -24,6 +30,10 @@ angular.module('styleGuideApp', [
         })
         .when('/componentdemo', {
           templateUrl: 'partials/component-demo.html'
+        })
+        .when('/components', {
+          controller: 'ComponentsCtrl',
+          templateUrl: 'partials/components.html'
         })
         .otherwise({
           redirectTo: '/'

@@ -39,4 +39,21 @@ angular.module('styleGuideApp.controllers')
         target: '_blank'
       }];
     }
+  ])
+  .controller('ComponentsCtrl', ['$scope',
+    function($scope) {
+      $scope.activeComponent = 0;
+
+      $scope.uiComponents = [{
+        title: 'Action-bar',
+        template: 'components/bootstrap-based/action-bar.html'
+      }, {
+        title: 'Financial Selector',
+        template: ''
+      }];
+
+      $scope.showComponent = function(index) {
+        $scope.activeComponent = index;
+      }
+    }
   ]);
