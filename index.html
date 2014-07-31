@@ -26,7 +26,13 @@
     <!-- Main View -->
     <div ng-view></div>
 
+    <!-- JSAPI -->
+    <script src="//www.google.com/jsapi"></script>
+    <script>
+        google.load("visualization", "1");
+    </script>
     <!-- dependencies -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular-route.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular-sanitize.js"></script>
@@ -34,6 +40,9 @@
     <script src="js/libs/angular-highlightjs.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+    <!-- financial-selector -->
+    <script src="bower_components/component-financial-selector/dist/js/financial-selector.js"></script>
+    <script src="bower_components/select2/select2.js"></script>
     <!-- app js -->
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>

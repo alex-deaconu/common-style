@@ -40,20 +40,38 @@ angular.module('styleGuideApp.controllers')
       }];
     }
   ])
-  .controller('ComponentsCtrl', ['$scope',
-    function($scope) {
-      $scope.activeComponent = 0;
+  .controller('ComponentsCtrl', ['$scope', '$routeParams',
+    function($scope, $routeParams) {
+
+      $scope.activeComponent = $routeParams.id ? $routeParams.id : 0;
 
       $scope.uiComponents = [{
         title: 'Action-bar',
         template: 'components/bootstrap-based/action-bar.html'
       }, {
         title: 'Financial Selector',
-        template: ''
+        template: 'components/financial-selector.html'
       }];
 
-      $scope.showComponent = function(index) {
-        $scope.activeComponent = index;
-      }
+      $scope.instruments = [
+        "AA.N",
+        "AXP.N",
+        "BA.N",
+        "BAC.N",
+        "CAT.N",
+        "CSCO.O",
+        "CVX.N",
+        "MMM.N",
+        "MRK.N",
+        "MSFT.O",
+        "PFE.N",
+        "PG.N",
+        "T.N",
+        "TRV.N",
+        "UTX.N",
+        "VZ.N",
+        "WMT.N",
+        "XOM.N"
+      ];
     }
   ]);

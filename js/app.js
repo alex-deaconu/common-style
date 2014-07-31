@@ -9,7 +9,8 @@ angular.module('styleGuideApp', [
   'hljs',
   'styleGuideApp.controllers',
   'styleGuideApp.directives',
-  'commonHeader'
+  'commonHeader',
+  'risevision.widget.common.financial'
 ])
   .config(function(hljsServiceProvider) {
     hljsServiceProvider.setOptions({
@@ -32,6 +33,10 @@ angular.module('styleGuideApp', [
           templateUrl: 'partials/component-demo.html'
         })
         .when('/components', {
+          controller: 'ComponentsCtrl',
+          templateUrl: 'partials/components.html'
+        })
+        .when('/components/:id', {
           controller: 'ComponentsCtrl',
           templateUrl: 'partials/components.html'
         })
